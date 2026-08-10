@@ -14,6 +14,7 @@ jurisdiction: European Union
 
 | Instrument | Trigger | Usually attaches to | Blockchain-specific reality check |
 |---|---|---|---|
+| MiCA — Regulation (EU) 2023/1114 | A crypto-asset is offered/admitted to trading or a person provides a listed crypto-asset service in the EU, without another excluded financial-product regime taking priority | Issuer, offeror, person seeking admission, ART/EMT issuer, authorised CASP, and persons performing controlled activities | Classify the token before the service. Financial instruments fall under MiFID II rather than MiCA. “Fully decentralised without any intermediary” is assessed case by case; partial decentralisation and a missing identifiable issuer do not automatically remove CASP/service duties. |
 | CRA — Regulation (EU) 2024/2847 | A product with digital elements is made available on the EU market in commercial activity | Manufacturer; importer/distributor duties; special role for open-source software stewards | A network or protocol is not automatically a product. Commercial wallets, node clients, appliances, SDKs, and dApp software may be in scope depending on supply model. FOSS outside commercial activity is excluded, but commercial stewardship can create duties. |
 | DORA — Regulation (EU) 2022/2554 | An entity is a listed EU financial entity, including an authorised MiCA CASP, or supplies ICT services into its regulated ICT chain | Financial entity; contractual ICT third-party provider; designated critical provider | A validator, DAO, protocol, or VASP is not automatically in scope. ESMA confirms transitional VASPs not yet authorised under MiCA are not DORA CASPs until authorised. |
 | NIS2 — Directive (EU) 2022/2555 | An entity meets national transposition criteria for an Annex I/II sector, size rule, or special inclusion | Essential/important entity and management body | “Blockchain company” is not a listed category. Cloud, data-centre, CDN, DNS, trust-service, MSP/MSSP, marketplace, energy, finance, health, or other covered operations can bring the operator into scope. |
@@ -25,7 +26,7 @@ jurisdiction: European Union
 1. **Define the unit.** Name the legal entity/collective, product, component, service, users, countries, and lifecycle phase.
 2. **Classify activity before technology.** Is the actor supplying software/hardware, operating infrastructure, providing ICT or financial services, sharing data, or processing personal data?
 3. **Record factual control.** Who designs, deploys, upgrades, pauses, holds keys, selects dependencies, routes transactions, earns fees, and communicates with users?
-4. **Apply overlays independently.** Product law (CRA), entity/sector resilience (DORA/NIS2), data economy (Data Act), and personal-data law (GDPR) can overlap.
+4. **Apply overlays independently.** Crypto-asset perimeter (MiCA/MiFID II), product law (CRA), entity/sector resilience (DORA/NIS2), data economy (Data Act), and personal-data law (GDPR) can overlap.
 5. **Resolve lex-specialis and national law.** DORA can be sector-specific cybersecurity law relative to NIS2 for equivalent requirements; NIS2 duties arise through Member-State transposition.
 6. **Allocate controls and evidence.** No duty should be assigned to an actor lacking authority, enforceable dependency, or documented escalation.
 
@@ -33,25 +34,37 @@ jurisdiction: European Union
 
 Legend: **Y** likely/direct when the trigger is met; **C** conditional; **N** not by this role alone.
 
-| BRM actor/component | CRA | DORA | NIS2 | Data Act | GDPR | Primary allocation questions |
-|---|:---:|:---:|:---:|:---:|:---:|---|
-| Core protocol/client commercial manufacturer | Y/C | N/C | C | C | C | Who places client/SDK on market and controls releases, vulnerabilities, support, and conformity evidence? |
-| Non-commercial FOSS contributor | N/C | N | N | N/C | C | Is contribution outside commercial activity? Does the actor determine purposes/means of processing? |
-| Open-source software steward | Y/C | C | C | C | C | Is there systematic support of FOSS intended for commercial activity? Who coordinates vulnerability handling? |
-| Cloud/hosting/data-centre/CDN provider | C | C/Y | Y/C | C/Y | C/Y | Covered NIS2 infrastructure or DORA ICT service? Controller or processor for which processing? |
-| Validator/miner/node operator | C | C | C | N/C | C | Product or service? Covered sector? Which personal data are replicated or observed? |
-| L2 sequencer/prover/DA operator | C | C | C | C | C | Who controls ordering, availability, forced exit, upgrades, recovery, and service commitments? |
-| Oracle/bridge/relayer/RPC/indexer | C | C | C | C | C/Y | Product, ICT service, covered entity, data intermediary, or controller/processor? Who can suspend/correct? |
-| Smart-contract developer/vendor | C | C | C | Y/C | C/Y | Commercially supplied product? Specifically executes a data-sharing agreement? Who controls deployment/upgrades? |
-| DAO/foundation/protocol governance | C | C | C | C | C/Y | Identify wrapper and factual influence: proposals, voting, multisig, treasury, fees, frontend, emergency powers. |
-| Wallet software provider | Y/C | C | C | C | C/Y | Product status, custody, remote processing, telemetry, recovery, support, and security updates. |
-| Custodian/exchange/authorised MiCA CASP | C | Y | C | C | Y/C | DORA governance, ICT risk/testing/incidents, third-party register/contracts, client-data roles. |
-| Transitional VASP not authorised under MiCA | C | N as CASP until authorised | C | C | Y/C | ESMA Q&A 2364: transitional permission does not make it an authorised MiCA CASP for DORA. |
-| Bank/investment firm/FMI using DLT | C | Y | C/lex specialis | C | Y/C | Allocate DLT dependencies into ICT risk, testing, continuity, incidents, outsourcing, and concentration controls. |
-| dApp/frontend/API operator | Y/C | C | C | C | Y/C | Software supply, hosting, routing/defaults, personal data, user notices, and dependency risk. |
-| Private user | N | N | N | C | Usually household exemption | Separate personal activity from professional/commercial operation or activity for others. |
+| BRM actor/component | MiCA | CRA | DORA | NIS2 | Data Act | GDPR | Primary allocation questions |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|---|
+| Core protocol/client commercial manufacturer | C | Y/C | N/C | C | C | C | Token/service activity or only code? Who controls releases, vulnerabilities, support, and conformity? |
+| Non-commercial FOSS contributor | N/C | N/C | N | N | N/C | C | Is contribution outside commercial activity and without controlled crypto service or data purpose? |
+| Open-source software steward | C | Y/C | C | C | C | C | Systematic commercial support? Does it also control a MiCA service or only coordinate software? |
+| Cloud/hosting/data-centre/CDN provider | N/C | C | C/Y | Y/C | C/Y | C/Y | ICT supplier or also intermediary/CASP? Covered NIS2 service? Data role? |
+| Validator/miner/node operator | C | C | C | C | N/C | C | Is it an intermediary-controlled service? Product or service? Which data are replicated? |
+| L2 sequencer/prover/DA operator | C/Y | C | C | C | C | C | Who controls ordering, forced exit, upgrades, fees, and service access? |
+| Oracle/bridge/relayer/RPC/indexer | C/Y | C | C | C | C | C/Y | Is a listed crypto-asset service performed or only technical ICT/data supply? |
+| Smart-contract developer/vendor | C | C | C | C | Y/C | C/Y | Issuer/offeror/service control? Commercial product? Data-sharing contract? Processing control? |
+| DAO/foundation/protocol governance | C/Y | C | C | C | C | C/Y | Identify issuer, offeror, intermediary, proposals, voting, multisig, treasury, fees, frontend, and emergency powers. |
+| Wallet software provider | C/Y | Y/C | C | C | C | C/Y | Custody/transfer/execution service or only software? Product, telemetry, recovery, and updates. |
+| Custodian/exchange/authorised MiCA CASP | Y | C | Y | C | C | Y/C | MiCA authorisation/conduct plus DORA ICT governance, incidents, testing, third-party controls, and client data. |
+| Transitional VASP not authorised under MiCA | C/transition ended or national status | C | N as CASP until authorised | C | C | Y/C | Verify current authorisation/wind-down. ESMA Q&A 2364 denies DORA-CASP status before MiCA authorisation. |
+| Bank/investment firm/FMI using DLT | C/Y | C | Y | C/lex specialis | C | Y/C | Token classification, permitted MiCA services, and DORA dependencies/controls. |
+| dApp/frontend/API operator | C/Y | Y/C | C | C | C | Y/C | Does it intermediate, offer/list, execute/route, custody, charge, control access, or merely publish software? |
+| Private user | N | N | N | N | C | Usually household exemption | Separate private use from professional offering, dealing, governance, or activity for others. |
 
 ## 4. Instrument-specific allocation
+
+### MiCA
+
+**Status:** ART/EMT provisions apply since **2024-06-30**; the remaining MiCA regime applies since **2024-12-30**. The maximum Article 143 transitional window ended by **2026-07-01**, subject to the authorisation/refusal and national arrangements that must be verified for each operator.
+
+Apply this sequence:
+
+1. Classify the token independently of marketing labels: financial instrument/other Article 2(4) exclusion, unique NFT assessment, EMT, ART, or other MiCA crypto-asset.
+2. Identify issuer, offeror, person seeking admission, trading-platform operator, and any listed crypto-asset service provider. No identifiable issuer does not automatically eliminate Title V service obligations.
+3. Test exemptions and the factual “fully decentralised without any intermediary” condition. ESMA says competent authorities assess it case by case; partially decentralised controlled activity remains in scope.
+4. Allocate authorisation/notification, white paper, marketing, reserve/redemption, custody, conflicts, complaints, client protection, order/transfer records, market-abuse, prudential, governance, and environmental disclosure duties.
+5. Once a CASP is authorised under MiCA, map DORA. Separately assess TFR/Travel Rule, AML/CFT, sanctions, MiFID II/AIFMD, payments/e-money, consumer, tax, and national law.
 
 ### CRA
 
@@ -89,6 +102,9 @@ The 2018 CNIL paper remains useful historical engineering guidance. The AEPD pub
 
 | Overlap | BRM treatment |
 |---|---|
+| MiCA + MiFID II/AIFMD | Qualify the legal instrument first. MiCA does not apply to crypto-assets that are financial instruments; tokenisation does not change the substance-over-form classification. |
+| MiCA + DORA | MiCA defines/authorises the CASP; DORA applies to the authorised CASP's operational resilience. A transitional VASP not authorised under MiCA is not a DORA CASP merely because it can temporarily operate. |
+| MiCA + DAO/DeFi | Test every controlled activity and intermediary. “Fully decentralised” is a narrow factual conclusion, not a project label or automatic protocol exemption. |
 | CRA + NIS2 | CRA governs product duties; NIS2 governs a covered entity's organisational/operational cybersecurity. Map manufacturer and operator separately. |
 | CRA + DORA | DORA governs the financial entity and ICT chain; CRA may govern products supplied into it. Do not assume blanket exclusion. |
 | DORA + NIS2 | Test NIS2 Article 4 and national implementation; record displaced and remaining requirements. |
@@ -109,6 +125,7 @@ The 2018 CNIL paper remains useful historical engineering guidance. The AEPD pub
 
 ## 7. Principal current sources
 
+- [MiCA](https://eur-lex.europa.eu/eli/reg/2023/1114/oj), [ESMA MiCA portal](https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica), and [ESAs classification test](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/asset-referenced-and-e-money-tokens-micar/esas-guidelines-templates-explanations-and-opinions-and-standardised-test-classification-crypto)
 - [CRA](https://eur-lex.europa.eu/eli/reg/2024/2847/oj) and [Commission C(2026) 5252 guidance](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation)
 - [DORA](https://eur-lex.europa.eu/eli/reg/2022/2554/oj) and [ESMA Q&A 2364](https://www.esma.europa.eu/publications-data/questions-answers/2364)
 - [NIS2](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) and [ENISA implementation guidance](https://www.enisa.europa.eu/publications/nis2-technical-implementation-guidance)
