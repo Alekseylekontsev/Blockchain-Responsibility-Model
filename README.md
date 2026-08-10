@@ -12,6 +12,8 @@ This repository is under active development. Documents marked **Draft** capture 
 
 - [Blockchain Responsibility Model — Core Metamodel](standards/core-metamodel.md) — the primary model: technical stack, control planes, regulatory overlays, assurance, network profiles, actor classes, control rights, and allocation rules. **Status: Draft v0.1.**
 - [ISO/TC 307 Standards Landscape](references/iso-tc-307-landscape.md) — published baseline, active revisions, draft projects, and their intended use in BRM. **Status date: 2026-08-10.**
+- [EU Regulatory Applicability Map](regulatory/eu-applicability-map.md) — actor/activity/component mapping for CRA, DORA, NIS2, Data Act, GDPR, and regulator interpretations. **Status date: 2026-08-10.**
+- [EU Source Register](references/eu-source-register.yaml) and [Official Downloads Index](references/official-sources/README.md) — controlled versions, dates, direct official downloads, and source/licensing rules.
 - [DeFi dApp Development Project Lifecycle](standards/defi-dapp-development-lifecycle.md) — original 11-stage lifecycle and RACI draft. It is retained as a lifecycle projection to be normalized against the core metamodel. **Status: Draft.**
 
 ## Model structure
