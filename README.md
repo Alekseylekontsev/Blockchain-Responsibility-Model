@@ -14,6 +14,7 @@ This repository is under active development. Documents marked **Draft** capture 
 - [ISO/TC 307 Standards Landscape](references/iso-tc-307-landscape.md) — published baseline, active revisions, draft projects, and their intended use in BRM. **Status date: 2026-08-10.**
 - [EU Regulatory Applicability Map](regulatory/eu-applicability-map.md) — actor/activity/component mapping for MiCA, CRA, DORA, NIS2, Data Act, GDPR, and regulator interpretations. **Status date: 2026-08-10.**
 - [EU Source Register](references/eu-source-register.yaml) and [Official Downloads Index](references/official-sources/README.md) — controlled versions, dates, direct official downloads, and source/licensing rules.
+- [EU Regulation to Standards Crosswalk](references/eu-regulation-standards-crosswalk.md) — implementation domains, BRM owners/evidence, and current ISO/IEC/ISO/TC 307 support without treating certification as legal compliance.
 - [DeFi dApp Development Project Lifecycle](standards/defi-dapp-development-lifecycle.md) — original 11-stage lifecycle and RACI draft. It is retained as a lifecycle projection to be normalized against the core metamodel. **Status: Draft.**
 
 ## Model structure
