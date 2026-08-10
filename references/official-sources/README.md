@@ -6,6 +6,7 @@ Exact official versions used by the BRM EU map are controlled in [`../eu-source-
 
 ### Binding EU texts
 
+- [MiCA 2023/1114 PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1114)
 - [CRA 2024/2847 PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847)
 - [DORA 2022/2554 PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2554)
 - [NIS2 2022/2555 PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022L2555)
@@ -15,6 +16,10 @@ Exact official versions used by the BRM EU map are controlled in [`../eu-source-
 
 ### Current guidance and regulator material
 
+- [ESMA MiCA policy and implementation portal](https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica)
+- [ESMA crypto-asset/financial-instrument classification Guidelines PDF](https://www.esma.europa.eu/sites/default/files/2025-03/ESMA75453128700-1323_Guidelines_on_the_conditions_and_criteria_for_the_qualification_of_CAs_as_FIs.pdf)
+- [ESAs MiCA Article 97 classification test PDF](https://www.esma.europa.eu/sites/default/files/2025-03/JC_2024_28_Guidelines_on_explanations_and_opinions__and_the_standardised_test_for_crypto-assets_under_MiCA.pdf)
+- [ESMA Q&A 2671 — fully decentralised services](https://www.esma.europa.eu/publications-data/questions-answers/2671)
 - [Commission CRA guidance C(2026) 5252 and annex](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation)
 - [ESMA Q&A 2364](https://www.esma.europa.eu/publications-data/questions-answers/2364)
 - [ENISA NIS2 Guidance v1.0 PDF](https://www.enisa.europa.eu/sites/default/files/2025-06/ENISA_Technical_implementation_guidance_on_cybersecurity_risk_management_measures_version_1.0.pdf)
