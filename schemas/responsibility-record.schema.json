@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Alekseylekontsev/Blockchain-Responsibility-Model/schemas/responsibility-record.schema.json",
+  "title": "BRM Responsibility Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "assessment_date", "network_profile", "component", "actor", "control_right", "activity", "jurisdiction", "lifecycle_event", "allocation", "evidence", "status"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "record_id": {"type": "string", "minLength": 1},
+    "assessment_date": {"type": "string", "format": "date"},
+    "network_profile": {"type": "string", "enum": ["public_permissionless_l1", "public_l2_rollup", "permissioned_consortium", "private_dlt", "appchain_sidechain", "cross_chain_protocol", "hybrid_defi"]},
+    "component": {"type": "string", "enum": ["infrastructure", "client_core_protocol", "consensus_network", "data_availability_state", "interoperability_oracle", "smart_contract_protocol", "wallet_identity_custody", "application_interface_offchain"]},
+    "actor": {"type": "object", "additionalProperties": false, "required": ["id", "name", "actor_type"], "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "actor_type": {"type": "string", "enum": ["legal_entity", "dao", "foundation", "developer", "operator", "custodian", "governance_body", "user", "third_party"]}}},
+    "control_right": {"type": "string", "enum": ["design", "implement", "operate", "upgrade", "emergency", "key_privilege", "treasury", "economic_influence", "none"]},
+    "activity": {"type": "string", "minLength": 1},
+    "jurisdiction": {"type": "string", "minLength": 2},
+    "lifecycle_event": {"type": "string", "enum": ["design", "build", "deploy", "operate", "incident", "upgrade", "sunset", "material_change"]},
+    "allocation": {"type": "object", "additionalProperties": false, "required": ["responsibility_role", "rationale", "confidence"], "properties": {"responsibility_role": {"type": "string", "enum": ["design_authority", "implementation_responsibility", "operational_control", "change_authority", "emergency_authority", "key_custodian", "economic_beneficiary", "legal_regulatory_accountable", "risk_owner", "control_owner", "evidence_owner", "assurance_provider", "user_duty"]}, "rationale": {"type": "string", "minLength": 10}, "confidence": {"type": "string", "enum": ["high", "medium", "low"]}}},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "description", "source"], "properties": {"evidence_id": {"type": "string"}, "description": {"type": "string"}, "source": {"type": "string", "format": "uri-reference"}}}},
+    "status": {"type": "string", "enum": ["allocated", "shared", "unresolved", "not_applicable"]},
+    "notes": {"type": "string"}
+  }
+}

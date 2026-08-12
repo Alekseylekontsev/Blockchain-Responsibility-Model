@@ -1,0 +1,26 @@
+schema_version: "1.0"
+record_id: N7-APP-UPGRADE-001
+assessment_date: 2026-08-12
+network_profile: hybrid_defi
+component: smart_contract_protocol
+actor:
+  id: N7-LABS
+  name: N7 Labs Ltd (illustrative)
+  actor_type: legal_entity
+control_right: upgrade
+activity: Maintains and upgrades a permissioned upgrade proxy for a non-custodial swap dApp
+jurisdiction: EU
+lifecycle_event: operate
+allocation:
+  responsibility_role: change_authority
+  rationale: The upgrade administrator can propose and execute implementation changes through a 2-of-3 multisig.
+  confidence: high
+evidence:
+  - evidence_id: E-001
+    description: Proxy admin configuration and multisig membership review
+    source: evidence/proxy-admin-review.md
+  - evidence_id: E-002
+    description: Deployment transaction and verified contract source
+    source: evidence/deployment-transaction.txt
+status: allocated
+notes: Illustrative worked example; no real entity, user funds, or legal conclusion.

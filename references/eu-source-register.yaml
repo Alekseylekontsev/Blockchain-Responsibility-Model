@@ -1,0 +1,187 @@
+schema_version: 1
+as_of: 2026-08-10
+scope: EU blockchain/DLT applicability sources for BRM
+sources:
+  - id: EU-MICA-2023-1114
+    title: Markets in Crypto-Assets Regulation
+    issuer: European Union
+    identifier: Regulation (EU) 2023/1114
+    celex: 32023R1114
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg/2023/1114/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1114
+    art_emt_applies: 2024-06-30
+    remaining_regime_applies: 2024-12-30
+    maximum_transition_end: 2026-07-01
+
+  - id: ESMA-MICA-FI-CLASSIFICATION-2025
+    title: Guidelines on qualification of crypto-assets as financial instruments
+    issuer: ESMA
+    identifier: ESMA75453128700-1323
+    status: final-guidance
+    date: 2025-03-19
+    official_url: https://www.esma.europa.eu/document/guidelines-conditions-and-criteria-qualification-crypto-assets-financial-instruments
+    direct_pdf: https://www.esma.europa.eu/sites/default/files/2025-03/ESMA75453128700-1323_Guidelines_on_the_conditions_and_criteria_for_the_qualification_of_CAs_as_FIs.pdf
+
+  - id: ESA-MICA-ARTICLE-97-CLASSIFICATION
+    title: Guidelines and standardised test for classification of crypto-assets under MiCA
+    issuer: EBA, ESMA and EIOPA
+    identifier: JC 2024 28
+    status: final-guidance
+    applies: 2025-05-12
+    official_url: https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/asset-referenced-and-e-money-tokens-micar/esas-guidelines-templates-explanations-and-opinions-and-standardised-test-classification-crypto
+    direct_pdf: https://www.esma.europa.eu/sites/default/files/2025-03/JC_2024_28_Guidelines_on_explanations_and_opinions__and_the_standardised_test_for_crypto-assets_under_MiCA.pdf
+
+  - id: ESMA-QA-2671
+    title: MiCA treatment of offers and fully decentralised services
+    issuer: ESMA
+    identifier: Q&A 2671
+    status: regulator-qa
+    official_url: https://www.esma.europa.eu/publications-data/questions-answers/2671
+    note: Fully decentralised without an intermediary is outside MiCA service scope, but competent authorities assess the facts case by case.
+
+  - id: EU-CRA-2024-2847
+    title: Cyber Resilience Act
+    issuer: European Union
+    identifier: Regulation (EU) 2024/2847
+    celex: 32024R2847
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2847
+    entry_into_force: 2024-12-10
+    reporting_applies: 2026-09-11
+    main_obligations_apply: 2027-12-11
+
+  - id: EC-CRA-GUIDANCE-2026-5252
+    title: Commission guidance on the application of the CRA
+    issuer: European Commission
+    identifier: C(2026) 5252 and Annex
+    status: final-guidance
+    date: 2026-07-27
+    official_url: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
+    note: Non-binding current guidance on scope, remote processing, FOSS, substantial modification, support, reporting, and risk assessment.
+
+  - id: EU-DORA-2022-2554
+    title: Digital Operational Resilience Act
+    issuer: European Union
+    identifier: Regulation (EU) 2022/2554
+    celex: 32022R2554
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg/2022/2554/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2554
+    applies: 2025-01-17
+
+  - id: ESMA-QA-2364
+    title: DORA and TFR applicability to VASPs not classified as CASPs under MiCA
+    issuer: ESMA
+    identifier: Q&A 2364
+    status: regulator-qa
+    answer_date: 2024-12-08
+    official_url: https://www.esma.europa.eu/publications-data/questions-answers/2364
+
+  - id: EU-NIS2-2022-2555
+    title: NIS2 Directive
+    issuer: European Union
+    identifier: Directive (EU) 2022/2555
+    celex: 32022L2555
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022L2555
+    transposition_deadline: 2024-10-17
+    note: Entity obligations depend on Member-State transposition.
+
+  - id: EU-NIS2-IMPLEMENTING-2024-2690
+    title: NIS2 technical and methodological requirements for specified digital entities
+    issuer: European Commission
+    identifier: Implementing Regulation (EU) 2024/2690
+    celex: 32024R2690
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R2690
+
+  - id: ENISA-NIS2-TIG-1.0
+    title: NIS2 Technical Implementation Guidance
+    issuer: ENISA
+    identifier: Version 1.0
+    status: implementation-guidance
+    date: 2025-06
+    official_url: https://www.enisa.europa.eu/publications/nis2-technical-implementation-guidance
+    direct_pdf: https://www.enisa.europa.eu/sites/default/files/2025-06/ENISA_Technical_implementation_guidance_on_cybersecurity_risk_management_measures_version_1.0.pdf
+    mapping_xlsx: https://www.enisa.europa.eu/sites/default/files/2025-06/ENISA_Technical_Implementation_Guidance_Mapping_table_version_1.0.xlsx
+
+  - id: EU-DATA-ACT-2023-2854
+    title: Data Act
+    issuer: European Union
+    identifier: Regulation (EU) 2023/2854
+    celex: 32023R2854
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg/2023/2854/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R2854
+    applies: 2025-09-12
+
+  - id: EC-DATA-ACT-EXPLAINED
+    title: Data Act explained
+    issuer: European Commission
+    status: final-guidance
+    last_verified: 2026-08-10
+    official_url: https://digital-strategy.ec.europa.eu/en/factpages/data-act-explained
+
+  - id: EU-GDPR-2016-679
+    title: General Data Protection Regulation
+    issuer: European Union
+    identifier: Regulation (EU) 2016/679
+    celex: 32016R0679
+    status: binding
+    official_url: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+    direct_pdf: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679
+    applies: 2018-05-25
+
+  - id: EDPB-GUIDELINES-02-2025-V2
+    title: Guidelines 02/2025 on processing personal data through blockchain technologies
+    issuer: European Data Protection Board
+    identifier: Guidelines 02/2025 version 2
+    status: final-guidance
+    date: 2026-07-07
+    official_url: https://www.edpb.europa.eu/documents/guideline/guidelines-on-processing-of-personal-data-through-blockchain-technologies_en
+    direct_pdf: https://www.edpb.europa.eu/system/files/2026-07/edpb_guidelines_202502_blockchain_v2_en.pdf
+    track_changes_docx: https://www.edpb.europa.eu/system/files/2026-07/edpb_guidelines_202502_blockchain_v2_trackchanges.docx
+    consultation_report_pdf: https://www.edpb.europa.eu/system/files/2026-07/edpbreport_publicconsultaton_guidelines_blockchain_202502_en.pdf
+    supersedes: EDPB consultation draft published 2025-04-14
+
+  - id: EC-EBS-COHORT-3-2026
+    title: European Blockchain Sandbox Best Practices Report — 3rd Cohort
+    issuer: European Commission contractor consortium (Bird & Bird / OXYGY)
+    identifier: ISBN 978-92-68-35364-6; DOI 10.2759/8911608
+    status: research-report
+    date: 2026-02-11
+    manuscript_date: 2026-01-09
+    official_url: https://blockchain-observatory.ec.europa.eu/document/43771f62-e58b-4f64-9c45-d14c140edaaa_en
+    direct_pdf: https://blockchain-observatory.ec.europa.eu/document/download/43771f62-e58b-4f64-9c45-d14c140edaaa_en?filename=3rd+cohort+best+practices+report+%28final+January+2026%29.pdf
+    licence: CC-BY-4.0 except third-party material
+    note: Prepared for the Commission but reflects authors' views; not approval or binding interpretation.
+
+  - id: CNIL-BLOCKCHAIN-GDPR-2018
+    title: Blockchain and the GDPR — Solutions for a responsible use
+    issuer: CNIL
+    status: historical
+    date: 2018-09
+    official_url: https://www.cnil.fr/en/blockchain-and-gdpr-solutions-responsible-use-blockchain-context-personal-data
+    direct_pdf: https://www.cnil.fr/sites/default/files/atoms/files/blockchain_en.pdf
+    note: Historical engineering guidance; use EDPB Guidelines 02/2025 v2 for current EU interpretation.
+
+  - id: AEPD-TECH-PUBLIC-ADMIN-BLOCKCHAIN
+    title: Tecnologias y Proteccion de Datos en las Administraciones Publicas
+    issuer: AEPD
+    status: historical-obsolete
+    official_url: https://www.aepd.es/guias/guia-tecnologias-admin-digital.pdf
+    direct_pdf: https://www.aepd.es/guias/guia-tecnologias-admin-digital.pdf
+    relevant_section: VII — Blockchain y tecnologias de registro distribuido
+    note: File is watermarked OBSOLETO. AEPD led the EDPB work; use final 2026 EDPB guidance.
+
+  - id: ISO-TC307-PORTFOLIO
+    title: ISO/TC 307 blockchain and DLT portfolio
+    issuer: ISO
+    status: metadata-only
+    official_url: https://www.iso.org/committee/6266604/x/catalogue/
+    local_crosswalk: iso-tc-307-landscape.md
+    note: Copyright-controlled ISO publications are not redistributed in this public repository.
