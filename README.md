@@ -26,6 +26,9 @@ Use is royalty-free, including commercial use. When you publish, reuse, teach, o
 - [N7 dApp worked example](examples/n7-dapp/README.md) — an illustrative responsibility record with explicit control, lifecycle, rationale, and evidence fields.
 - [Responsibility record schema](schemas/responsibility-record.schema.json) — JSON Schema 2020-12 for machine-readable records.
 - [MVA templates](templates/) — the five minimum viable assessment artifacts described in HOW-TO-USE.
+- [Security and adversarial model](SECURITY.md) — threats, attacker capabilities, and control questions.
+- [Evidence integrity guide](GUIDES/evidence-integrity.md) — reproducible, privacy-aware evidence collection.
+- [ERC-20 Quickstart](examples/erc20-quickstart/README.md) — minimal application walkthrough.
 
 ## Model structure
 

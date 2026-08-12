@@ -1,0 +1,23 @@
+schema_version: "1.0"
+record_id: ERC20-TRANSFER-001
+assessment_date: 2026-08-12
+network_profile: public_permissionless_l1
+component: wallet_identity_custody
+actor:
+  id: EXAMPLE-SIGNER
+  name: Example signer (replace with verified actor)
+  actor_type: operator
+control_right: operate
+activity: Signs and submits an ERC-20 transfer transaction
+jurisdiction: REPLACE-ME
+lifecycle_event: operate
+allocation:
+  responsibility_role: operational_control
+  rationale: The signer controls the key used to authorize the observed transfer, subject to verification of custody and delegation facts.
+  confidence: medium
+evidence:
+  - evidence_id: TX-REPLACE-ME
+    description: Transaction receipt, chain ID, block number, contract address, and event logs
+    source: evidence/transaction-receipt.json
+status: unresolved
+notes: Replace placeholders with verified facts; execution evidence alone does not establish legal accountability.

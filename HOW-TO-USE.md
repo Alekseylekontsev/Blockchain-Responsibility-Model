@@ -172,6 +172,8 @@ This lightweight assessment is enough to expose most responsibility conflicts be
 
 The canonical machine-readable record is defined by [`schemas/responsibility-record.schema.json`](schemas/responsibility-record.schema.json). Start from the templates in [`templates/`](templates/) and compare the completed record with the [N7 worked example](examples/n7-dapp/responsibility-record.yaml). The example is illustrative and must not be treated as legal advice or evidence of a real deployment.
 
+For a minimal application, follow the [ERC-20 Quickstart](examples/erc20-quickstart/README.md), assess threats using [SECURITY.md](SECURITY.md), and preserve artifacts according to the [evidence integrity guide](GUIDES/evidence-integrity.md).
+
 ## Full Regulatory Readiness Pack
 
 For authorisation, sandbox participation, prior consultation, conformity assessment, or institutional due diligence, add:
