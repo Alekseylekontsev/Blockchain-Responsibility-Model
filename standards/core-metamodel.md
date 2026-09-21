@@ -4,7 +4,7 @@ acronym: BRM
 status: draft
 version: 0.1
 document_type: metamodel
-updated: 2026-08-10
+updated: 2026-09-21
 ---
 
 # Blockchain Responsibility Model — Core Metamodel
@@ -33,6 +33,7 @@ No single dimension is sufficient. Responsibility is derived from the combined f
 6. **Shared control requires explicit allocation.** Joint, sequential, or overlapping control must be documented, including decision boundaries and escalation paths.
 7. **Assurance follows risk.** Evidence, testing, monitoring, audit, and incident duties must follow the risk owner and the actor able to implement or enforce controls.
 8. **Allocation is event-sensitive.** Forks, upgrades, exploits, insolvency, key compromise, governance capture, and shutdown may change the responsible actor.
+9. **Threat modeling precedes risk assessment.** Model the system boundary, components, data flows, trust boundaries, assets, assumptions, threats, harms, and candidate responses before converting threats into risk statements or accepting residual risk.
 
 ## 3. Four-plane model
 
@@ -95,7 +96,8 @@ Certification and audit provide assurance; they do not replace a required licens
 
 The assurance plane includes:
 
-- threat modeling and risk assessment;
+- system decomposition, data-flow and trust-boundary mapping;
+- threat modeling before risk assessment, including threats, harms, assumptions, responses, and remaining threats;
 - architecture and economic-security review;
 - code review, testing, fuzzing, invariant testing, and formal verification;
 - external smart-contract and infrastructure audits;
@@ -159,6 +161,9 @@ RACI may be used for a bounded operational process, but BRM requires distinct at
 | Control Owner | Who designs and maintains the control that mitigates the risk? |
 | Evidence Owner | Who produces, protects, retains, and provides evidence that the duty was performed? |
 | Assurance Provider | Who independently tests or attests, without assuming management accountability? |
+| Threat Mitigation Authority | Who has the factual technical, contractual, governance, or operational power to implement or enforce a threat response? |
+| Security Outcome Owner | Who is accountable for the required security outcome even where implementation is delegated or distributed? |
+| Remaining Threat Owner | Who accepts, transfers, escalates, monitors, or reopens a threat that cannot be fully addressed? |
 | User / Counterparty Duty Owner | Who communicates terms, risks, incidents, complaints, remedies, and exit options? |
 
 Multiple values are allowed, but every allocation must state whether responsibility is exclusive, joint, shared, sequential, delegated, or inherited.
@@ -169,14 +174,16 @@ For every in-scope component or activity:
 
 1. **Select network profile(s).**
 2. **Identify the component and technical layer.**
-3. **Enumerate actors, including dependencies and privileged collectives.**
-4. **Record factual control rights**, including indirect, emergency, economic, and governance influence.
-5. **Identify performed activities** and applicable product/service classifications.
-6. **Select jurisdictional overlays** for each actor, user group, and activity.
-7. **Allocate responsibility dimensions** and state the allocation mode.
-8. **Map risks, controls, evidence, and assurance.**
-9. **Define lifecycle and crisis events** that trigger reassessment or transfer.
-10. **Validate gaps and conflicts:** no duty may remain unowned; no actor may be named accountable without authority or enforceable recourse.
+3. **Map data flows, trust boundaries, assets, dependencies, and explicit assumptions.**
+4. **Enumerate actors, including dependencies and privileged collectives.**
+5. **Record factual control rights**, including indirect, emergency, economic, and governance influence.
+6. **Identify performed activities** and applicable product/service classifications.
+7. **Build the threat model**: identify material security, privacy, abuse, implementation, deployment, dependency, and ecosystem threats; record candidate responses and remaining threats.
+8. **Select jurisdictional overlays** for each actor, user group, and activity.
+9. **Allocate responsibility dimensions** and state the allocation mode, including mitigation authority, security-outcome ownership, and remaining-threat ownership.
+10. **Convert material threats into risk statements and map controls, evidence, assurance, and risk acceptance.** Threat modeling is an input to risk assessment, not a substitute for it.
+11. **Define lifecycle and crisis events** that trigger reassessment or transfer.
+12. **Validate gaps and conflicts:** no duty or material remaining threat may remain unowned; no actor may be named accountable without authority, enforceable recourse, or an explicit escalation path.
 
 ## 8. Minimum responsibility record
 
@@ -191,9 +198,16 @@ Each allocation should be machine-readable and contain at least:
 | activity | Function actually performed |
 | jurisdiction / user_scope | Applicable location and affected population |
 | control_right | Nature, threshold, and technical mechanism of influence |
+| data_flow / trust_boundary | Material flows, boundary crossings, and trust assumptions relevant to the component |
+| asset / stakeholder | Assets and affected stakeholders that shape threat and harm analysis |
+| threat / harm | Material threat scenario and resulting technical, privacy, economic, or socio-technical harm |
+| threat_response | Avoid, mitigate, transfer, accept, monitor, or another documented response |
 | responsibility_dimension | One or more dimensions from Section 6 |
+| mitigation_authority | Actor able to implement or enforce the selected response |
+| security_outcome_owner | Actor accountable for the required security outcome |
+| remaining_threat_owner | Actor accountable for accepted, transferred, monitored, or unresolved remaining threats |
 | allocation_mode | Exclusive, joint, shared, sequential, delegated, or inherited |
-| risk / control | Risk owned and control maintained |
+| risk / control | Risk derived from material threats and the control maintained |
 | evidence | Evidence type, producer, repository, retention, and reviewer |
 | dependencies | Upstream/downstream actors and inherited assumptions |
 | trigger_event | Event requiring review, transfer, notification, or escalation |
@@ -209,7 +223,8 @@ Each allocation should be machine-readable and contain at least:
 5. **Interface control matters.** A party that curates access, routes transactions, sets defaults, geoblocks, charges users, or provides support may have duties even without changing smart contracts.
 6. **Unowned obligations escalate.** Any missing risk, control, evidence, incident, or regulatory owner is a governance defect requiring resolution before release or continued operation.
 7. **Conflicting authority escalates.** Where an actor is accountable but lacks change or emergency authority, the gap must be closed through governance, contract, technical control, or explicit risk acceptance.
-8. **Material events trigger reassessment.** At minimum: ownership or governance change, fork, upgrade, new jurisdiction, new regulated activity, exploit, key compromise, insolvency, major dependency change, or shutdown.
+8. **Threats without mitigation authority escalate.** If the actor accountable for an outcome cannot implement the required response, BRM must identify the actor that can act, the enforceable dependency or escalation path, and the owner of any remaining threat.
+9. **Material events trigger reassessment.** At minimum: ownership or governance change, fork, upgrade, new jurisdiction, new regulated activity, exploit, key compromise, insolvency, major dependency change, or shutdown.
 
 ## 10. Relationship to lifecycle
 
