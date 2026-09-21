@@ -17,6 +17,7 @@ This repository is under active development. Documents marked **Draft** capture 
 - [EU Regulatory Applicability Map](regulatory/eu-applicability-map.md) — actor/activity/component mapping for MiCA, CRA, DORA, NIS2, Data Act, GDPR, and regulator interpretations. **Status date: 2026-08-10.**
 - [EU Source Register](references/eu-source-register.yaml) and [Official Downloads Index](references/official-sources/README.md) — controlled versions, dates, direct official downloads, and source/licensing rules.
 - [EU Regulation to Standards Crosswalk](references/eu-regulation-standards-crosswalk.md) — implementation domains, BRM owners/evidence, and current ISO/IEC/ISO/TC 307 support without treating certification as legal compliance.
+- [W3C Threat Modeling and CRA — GDC 2026](references/w3c-threat-modeling-cra-gdc-2026.md) — PROMOTE research input; MAIN architectural delta making threat modeling a precursor to risk assessment and explicitly allocating mitigation authority, security outcomes, and remaining threats.
 - [DeFi dApp Development Project Lifecycle](standards/defi-dapp-development-lifecycle.md) — original 11-stage lifecycle and RACI draft. It is retained as a lifecycle projection to be normalized against the core metamodel. **Status: Draft.**
 
 ## Model structure
