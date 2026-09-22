@@ -1,0 +1,71 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main_learning
+
+permissions:
+  contents: read
+
+jobs:
+  docs-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check Markdown links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --exclude-mail --accept 200,206,429 '**/*.md'
+          fail: true
+
+      - name: Validate YAML
+        shell: python
+        run: |
+          import pathlib
+          import yaml
+
+          for path in pathlib.Path('.').rglob('*.yaml'):
+              with path.open(encoding='utf-8') as f:
+                  yaml.safe_load(f)
+              print(f'validated {path}')
+
+      - name: Validate BRM threat-model integration
+        shell: python
+        run: |
+          from pathlib import Path
+
+          required = {
+              'standards/core-metamodel.md': [
+                  'Threat modeling precedes risk assessment',
+                  'Threat Mitigation Authority',
+                  'Security Outcome Owner',
+                  'Remaining Threat Owner',
+                  'data_flow / trust_boundary',
+                  'remaining_threat_owner',
+              ],
+              'HOW-TO-USE.md': [
+                  'Step 3A — Build the threat model',
+                  'threat-model.md',
+                  'Trust boundary',
+              ],
+              'references/w3c-threat-modeling-cra-gdc-2026.md': [
+                  'PROMOTE / CRA / Threat Modeling / Responsibility Allocation / Standards Engineering',
+                  'Group Note Draft',
+              ],
+          }
+
+          failures = []
+          for filename, needles in required.items():
+              text = Path(filename).read_text(encoding='utf-8')
+              for needle in needles:
+                  if needle.lower() not in text.lower():
+                      failures.append(f'{filename}: missing {needle!r}')
+
+          if failures:
+              raise SystemExit('\n'.join(failures))
+
+          print('BRM threat-model integration checks passed')
