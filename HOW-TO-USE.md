@@ -77,9 +77,17 @@ Use the technical stack in the [Core Metamodel](standards/core-metamodel.md):
 7. wallets, identity, and custody;
 8. application, interface, and off-chain services.
 
-For each component, record its owner, operator, hosting location, dependencies, data handled, assets affected, and failure impact.
+For each component, record its owner, operator, hosting location, dependencies, data handled, assets affected, and failure impact. Map material data flows and identify trust boundaries where data, authority, execution, identity, custody, or assurance crosses between actors or security domains.
 
 Include cloud platforms, RPC providers, sequencers, validators, bridges, oracles, indexers, custodians, identity providers, multisig services, frontend hosting, analytics, and critical open-source dependencies.
+
+### Step 3A — Build the threat model
+
+Build the threat model before converting threats into formal risk statements. Record the system boundary, actors, components, flows, trust boundaries, assets, stakeholders, assumptions, material threats and harms, proposed responses, and remaining threats.
+
+Include security, privacy, abuse/misuse, implementation, deployment, dependency, and ecosystem threats where relevant. For each material threat, identify who can actually implement or enforce a response. A security outcome must not be assigned to an actor that has neither mitigation authority nor an enforceable escalation path.
+
+Treat the threat model as an input to risk assessment and risk acceptance, not as a replacement for either.
 
 ### Step 4 — Identify actors and factual control
 
@@ -136,7 +144,7 @@ Record the applicable legal entity, activity, jurisdiction, effective date, lega
 
 Build a traceability chain for each material obligation:
 
-> **Requirement → Actor → Control right → Risk → Control → Evidence → Owner → Reviewer → Date**
+> **System boundary → Component → Data flow → Trust boundary → Asset / Stakeholder → Threat / Harm → Security outcome → Risk → Requirement → Actor / Control right → Threat response / Control → Evidence → Remaining threat / Acceptance → Owner → Reviewer → Date**
 
 Good evidence should demonstrate both design and operation. Examples include governance approvals, architecture and data-flow diagrams, key-ceremony records, deployment logs, access reviews, SBOMs, vulnerability records, reconciliation records, recovery tests, outsourcing monitoring, DPIAs, complaints, white papers, code reviews, penetration tests, and control attestations.
 
@@ -160,13 +168,14 @@ Create remediation owners and due dates. Escalate any obligation that no actor c
 
 ## Minimum viable assessment
 
-For an early product or initial legal review, start with five artifacts:
+For an early product or initial legal review, start with six artifacts:
 
 1. **system-boundary.md** — product, entities, jurisdictions, assumptions, and exclusions;
-2. **architecture-and-data-flows.md** — components, dependencies, asset and personal-data flows;
-3. **actor-control-register.yaml** — actors and factual powers;
-4. **regulatory-perimeter.md** — in/out/conditional/unresolved conclusions with rationale;
-5. **obligation-evidence-matrix.csv** — requirements, controls, evidence, owners, and gaps.
+2. **architecture-and-data-flows.md** — components, dependencies, asset and personal-data flows, and trust boundaries;
+3. **threat-model.md** — assets/stakeholders, material threats and harms, responses, mitigation authority, remaining threats, and acceptance/transfer rationale;
+4. **actor-control-register.yaml** — actors and factual powers;
+5. **regulatory-perimeter.md** — in/out/conditional/unresolved conclusions with rationale;
+6. **obligation-evidence-matrix.csv** — requirements, controls, evidence, owners, and gaps.
 
 This lightweight assessment is enough to expose most responsibility conflicts before detailed policy drafting.
 
@@ -257,6 +266,8 @@ A BRM assessment is ready for decision when:
 
 - the system boundary and network profiles are approved;
 - every critical component and dependency has an identified operator;
+- material data flows, trust boundaries, assets, assumptions, and threats are documented;
+- every material threat has a response or explicit remaining-threat decision, with mitigation authority and ownership identified;
 - all material control rights and economic beneficiaries are documented;
 - regulated activities and jurisdictions are assessed;
 - every applicable obligation has an accountable actor, control owner, and evidence owner;
