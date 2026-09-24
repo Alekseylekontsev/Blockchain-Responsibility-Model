@@ -249,7 +249,7 @@ BRM integrates concepts from existing architecture, governance, legal, privacy, 
 - [NIST IR 8301: Blockchain Networks — Token Design and Management Overview](https://nvlpubs.nist.gov/nistpubs/ir/2021/NIST.IR.8301.pdf)
 - [Governance challenges of blockchain and decentralized autonomous organizations](https://pure.tudelft.nl/ws/portalfiles/portal/85677186/IP_190154.pdf)
 - [Taxonomy of centralization in public blockchain systems](https://arxiv.org/abs/2009.12542)
-- [EDPB Guidelines 02/2025 on processing personal data through blockchain technologies](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-022025-processing-personal-data-through_en)
+- [EDPB Guidelines 02/2025 on processing personal data through blockchain technologies](https://www.edpb.europa.eu/documents/guideline/guidelines-022025-on-processing-of-personal-data-through-blockchain_en)
 - [FATF guidance for virtual assets and VASPs](https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html)
 - [EU Markets in Crypto-assets Regulation (MiCA)](https://eur-lex.europa.eu/eli/reg/2023/1114/oj)
 
